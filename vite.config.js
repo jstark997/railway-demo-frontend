@@ -8,6 +8,6 @@ export default defineConfig({
     host: true,
     port: 5173,
     strictPort: false,
-    allowedHosts: ["all"], // Add this line
+    allowedHosts: ["railway-demo-frontend-production-6b0c.up.railway.app"],
   },
 });
