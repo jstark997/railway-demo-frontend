@@ -12,7 +12,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log("VITE_API_URL:", API_URL);
+    console.log("API URL: ", API_URL);
     fetchStatus();
     fetchItems();
   }, []);
