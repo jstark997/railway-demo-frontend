@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     host: true,
-    port: 5173,
+    port: 4173,
     strictPort: false,
-    allowedHosts: ["railway-demo-frontend-production-6b0c.up.railway.app"],
+    allowedHosts: ["all"],
   },
 });
