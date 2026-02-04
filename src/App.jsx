@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_HOST = import.meta.env.VITE_API_HOST || "http://localhost";
+const API_PORT = import.meta.env.VITE_API_PORT || "8000";
+const API_URL = `${API_HOST}:${API_PORT}`;
 
 function App() {
   const [status, setStatus] = useState(null);

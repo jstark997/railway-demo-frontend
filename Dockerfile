@@ -20,7 +20,9 @@ COPY . ./
 
 # Accept build argument for API URL
 ARG VITE_API_URL
+ARG VITE_API_PORT
 ENV VITE_API_URL=$VITE_API_URL
+ENV VITE_API_PORT=$VITE_API_PORT
 
 # Build the app.
 RUN npm run build
