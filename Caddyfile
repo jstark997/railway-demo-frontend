@@ -23,6 +23,18 @@
     # health check for railway
     rewrite /health /*
 
+    # proxy API requests to backend via Railway's internal network
+    handle /api/* {
+        reverse_proxy http://web.railway.internal:8080 {
+            # pass original host header
+            header_up Host {upstream_hostport}
+            # preserve original request path
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
     # serve from the 'dist' folder (Vite builds into the 'dist' folder)
     root * dist
 
