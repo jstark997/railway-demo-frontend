@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const API_SCHEME = "http";
-const API_HOST = import.meta.env.VITE_API_HOST || "localhost";
-const API_PORT = import.meta.env.VITE_API_PORT || "8000";
-const API_URL = `${API_SCHEME}://${API_HOST}:${API_PORT}`;
+// const API_SCHEME = "http";
+// const API_HOST = import.meta.env.VITE_API_HOST || "localhost";
+// const API_PORT = import.meta.env.VITE_API_PORT || "8000";
+// const API_URL = `${API_SCHEME}://${API_HOST}:${API_PORT}`;
+const API_URL = ""; //Empty URL. Using proxy in Caddy web server
 
 function App() {
   const [status, setStatus] = useState(null);
