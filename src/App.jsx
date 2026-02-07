@@ -35,7 +35,15 @@ function App() {
   const fetchItems = async () => {
     try {
       const response = await fetch(`${API_URL}/api/items`);
-      const data = await response.json();
+      //const data = await response.json();
+
+      const text = await response.text(); // Get raw text first
+      console.log("Raw response:", text); // Log it
+      console.log("Response status:", response.status);
+      console.log("Response headers:", [...response.headers.entries()]);
+
+      const data = JSON.parse(text); // Then parse
+
       setItems(data.items);
     } catch (err) {
       console.error("Error fetching items:", err);
